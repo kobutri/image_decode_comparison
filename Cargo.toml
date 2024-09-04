@@ -1,0 +1,25 @@
+[package]
+name = "image_decode_comparison"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+jpeg-decoder = { version = "0.3.1", features = ["nightly_aarch64_neon"] }
+jpegxl-rs = { version = "0.10.4", features = ["vendored"] }
+jxl-oxide = "0.8.1"
+mozjpeg = { version = "0.10.9", features = ["nasm_simd", "with_simd"] }
+png = "0.17.13"
+zune-jpeg = "0.4.13"
+zune-png = "0.4.10"
+libavif = "0.14.0"
+webp = "0.3.0"
+
+[dev-dependencies.criterion]
+version = "0.5.1"
+default-features = false
+features = ["html_reports"]
+
+[[bench]]
+name = "decode_jpeg"
+harness = false
+
